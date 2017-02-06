@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="fam003" namespace="/fam003" extends="default">
+		<action name="sam0031" method="initAction"
+			class="jp.co.cyms.apps.fam003.action.Pam0031Action">
+			<result name="success">/jsp/fam003/sam0031.jsp</result>
+			<result name="input">/jsp/fam003/sam0031.jsp</result>
+		</action>
+		<action name="sam0031_01" method="showEditAction"
+			class="jp.co.cyms.apps.fam003.action.Pam0031Action">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+
+
+	</package>
+</struts>

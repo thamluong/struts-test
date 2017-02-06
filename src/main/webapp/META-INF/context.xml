@@ -5,13 +5,8 @@
      name="dataSource"
      type="javax.sql.DataSource"
      
-     .
-     .
-     .
      username="cdmsdev"
      url="jdbc:oracle:thin:@192.168.11.188:1521:CDMSNEW"
-     .
-     .
-     .
+	
      />
 </Context>
