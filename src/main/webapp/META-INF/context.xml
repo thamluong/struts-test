@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+  <Resource
+     name="dataSource"
+     type="javax.sql.DataSource"
+     
+     .
+     .
+     .
+     username="cdmsdev"
+     url="jdbc:oracle:thin:@192.168.11.188:1521:CDMSNEW"
+     .
+     .
+     .
+     />
+</Context>
