@@ -6,18 +6,61 @@ var tableUnion3Master;
 $(document).ready(
 		function() {
 			tableUnion3Master = $('#union3-table').DataTable(
-			{
-				"sScrollY" : "500px",
-				"lengthMenu" : [ 10, 20, 50, 100 ],
-				"fnInitComplete" : function() {
-					$('.dataTables_scrollBody').perfectScrollbar();
-				}});
-			
+					{
+
+						"sScrollY" : "500px",
+						"lengthMenu" : [ 10, 20, 50, 100 ],
+						"scrollX" : true,
+						"aaSorting" : [],
+						"bAutoWidth" : true,
+						"fnInitComplete" : function() {
+							$('.dataTables_scrollBody').perfectScrollbar();
+						},
+						"iDisplayLength" : 20,
+						// "order": [[ 2, "asc" ],[ 3, "asc" ],[ 4, "asc" ]],
+						"aoColumnDefs" : [ {
+							bSortable : false,
+							aTargets : [ 0, 1, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]		// here, these columns won't be sorted
+						} ],
+						"bSort" : true,
+						"aoColumns" : [ {											// WARNING: when redraw datatable, 
+							"sClass" : "t-center"									// adjust the number of columns in here, too
+						}, {
+							"sClass" : "t-right",
+						}, {
+							"sClass" : "t-center",
+						}, {
+							"sClass" : "t-center",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}, {
+							"sClass" : "t-left",
+						}
+
+						]
+					});
+
 			tableUnion3Master.on( 'order.dt search.dt', function () {
 				tableUnion3Master.column(1, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-		            cell.innerHTML = i+1;
-		        } );
-		    } ).draw();
+					cell.innerHTML = i+1;
+				} );
+			} ).draw();
 
 			// CLICK NEW BUTTON
 			$("#newButton").click(function() {
@@ -25,23 +68,23 @@ $(document).ready(
 				clearPopup();
 
 				// show popup
-            	$("#myModal").on('shown.bs.modal', function () {
-            		setTabIndexPopup("NEW");
-            	});
+				$("#myModal").on('shown.bs.modal', function () {
+					setTabIndexPopup("NEW");
+				});
 
 				$("#myModal").modal();
 			});
 		});
 
 $(document).on('click', '#union3-table [data-type = "modal"]', function(event) {
-	// here whenever click events are operated
-	
+	// here whenever click, events are operated
+
 });
 
 function clearPopup() {
 	$("#category").val("");
 	$("#classCd").val("");
-	
+
 	document.getElementById("category").removeAttribute("disabled");
 };
 
@@ -55,13 +98,13 @@ function changeValidDate(obj) {
 	// format like '28-12-2014'
 	regx4 = /^\d{2}-\d{2}-\d{4}$/g;
 	// input date
-	
-	
+
+
 };
 
 function loading_ajax(){
 	$('body').append('<div id="mpb_loadingAjax"></div>');
-    $('#mpb_loadingAjax').fadeIn(300);
+	$('#mpb_loadingAjax').fadeIn(300);
 };
 
 
